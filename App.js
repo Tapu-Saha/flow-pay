@@ -16,7 +16,7 @@ export default function App() {
     <NavigationContainer theme={MyTheme}>
       <Stack.Navigator
         screenOptions={{
-          headerShadowVisible: false,
+         headerShadowVisible: false,
         }}
       >
         <Stack.Screen

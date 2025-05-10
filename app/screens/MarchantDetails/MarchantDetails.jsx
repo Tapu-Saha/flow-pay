@@ -1,21 +1,18 @@
+import AntDesign from "@expo/vector-icons/AntDesign";
+import Feather from "@expo/vector-icons/Feather";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
-  Pressable,
   SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,
-  View,
-  StyleSheet,
+  View
 } from "react-native";
-import Feather from "@expo/vector-icons/Feather";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import { useNavigation } from "@react-navigation/native";
 
 const MarchantDetails = () => {
   const navigation = useNavigation();
-  const [isFocused, setIsFocused] = React.useState(false);
 
   const handleStartButton = () => {
     navigation.navigate("PaymentOptions");
@@ -23,16 +20,13 @@ const MarchantDetails = () => {
 
   return (
     <SafeAreaView className="flex-1 mx-4 my-2 mt-5 justify-between">
-      <View className="flex-1">
-        <View style={styleX.shadow} className="rounded-lg border border-gray-300 bg-white px-3 h-13 flex-row items-center">
+      <View>
+        <View className="rounded-lg border border-gray-300 bg-white px-3 h-13 flex-row items-center">
           <Feather name="search" size={18} color="gray" />
           <TextInput
             placeholder="Marchant name or number"
-            autoCorrect={false}
-            autoCapitalize="none"
-            autoComplete="off"
-            onBlur={() => setIsFocused(false)}
-            className="flex-1 text-md font-medium py-3 ml-2"
+            placeholderTextColor={'gray'}
+            className="flex-1 text-xl font-medium py-3 ml-2"
           />
         </View>
 
@@ -42,8 +36,8 @@ const MarchantDetails = () => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity onPress={handleStartButton} className="rounded-lg mt-2 py-4 bg-green-600 flex-row items-center justify-center gap-1">
-        <Text className="text-white text-center text-lg">Next</Text>
+      <TouchableOpacity  onPress={handleStartButton} className="rounded-lg mt-2 py-4 bg-green-600 flex-row items-center justify-center gap-1">
+        <Text className="text-white text-center text-xl">Next</Text>
         <AntDesign name="arrowright" size={20} color="white" />
       </TouchableOpacity>
     </SafeAreaView>
@@ -51,16 +45,3 @@ const MarchantDetails = () => {
 };
 
 export default MarchantDetails;
-
-const styleX = StyleSheet.create({
-  shadow: {
-    shadowColor: "gray",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 2,
-  },
-});
