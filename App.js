@@ -18,6 +18,7 @@ export default function App() {
         screenOptions={{
          headerShadowVisible: false,
         }}
+        initialRouteName="MarchantDetails"
       >
         <Stack.Screen
           name="MarchantDetails"
